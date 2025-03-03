@@ -24,6 +24,11 @@ async def session_timer(user1: str, user2: str):
     matcher.remove_user(user2)
 
 
+@app.get("/")
+async def root():
+    return {"message": "Call Server is running"}
+
+
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     # Generate a unique user_id for this connection.
